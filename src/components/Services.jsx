@@ -10,15 +10,15 @@ const services = [
     description:
       'Execução de obras civis com metodologia técnica, garantindo eficiência e qualidade em todas as etapas do processo construtivo.',
     features: ['Estrutura em concreto', 'Alvenaria estrutural', 'Acabamento fino'],
-    image: '/images/hero-construction.png',
+    image: '/images/construcao.png',
   },
   {
     icon: Warehouse,
-    title: 'Cobertura Metálica Sanduíche',
+    title: 'Cobertura Metálica',
     description:
       'Instalação e manutenção de coberturas metálicas com sistema sanduíche, proporcionando isolamento térmico e acústico superiores.',
     features: ['Isolamento térmico', 'Acústica otimizada', 'Alta durabilidade'],
-    image: '/images/metal-roofing.png',
+    image: '/images/teto.png', 
   },
   {
     icon: Drop,
@@ -26,7 +26,7 @@ const services = [
     description:
       'Sistemas completos de impermeabilização para lajes, piscinas, reservatórios e áreas molhadas, combatendo infiltrações.',
     features: ['Lajes e coberturas', 'Piscinas e reservatórios', 'Áreas molhadas'],
-    image: '/images/waterproofing-service.png',
+    image: '/images/impermeabilizacao.png',
   },
   {
     icon: Wall,
@@ -34,7 +34,7 @@ const services = [
     description:
       'Diagnóstico e tratamento de patologias construtivas relacionadas à infiltração e umidade, restaurando a integridade estrutural.',
     features: ['Diagnóstico técnico', 'Correção de infiltrações', 'Restauração estrutural'],
-    image: '/images/impermelast-acqua-duo.jpeg',
+    image: '/images/piscina.png',
   },
 ]
 

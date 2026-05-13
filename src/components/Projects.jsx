@@ -6,7 +6,7 @@ import './Projects.css'
 const projects = [
   {
     id: 1,
-    src: '/images/impermelast-acqua-duo.jpeg',
+    src: '/images/piscina.png',
     title: 'Piscina de Alvenaria',
     category: 'Impermeabilização',
     description: 'Aplicação de Imperlast Acqua Duo em piscina de alvenaria — antes e depois do tratamento impermeabilizante.',
@@ -20,14 +20,14 @@ const projects = [
   },
   {
     id: 3,
-    src: '/images/metal-roofing.png',
+    src: '/images/teto.png',
     title: 'Cobertura Metálica Industrial',
     category: 'Cobertura Metálica',
     description: 'Instalação de cobertura metálica sanduíche em galpão industrial com isolamento termoacústico.',
   },
   {
     id: 4,
-    src: '/images/waterproofing-service.png',
+    src: '/images/impermeabilizacao.png',
     title: 'Impermeabilização de Laje',
     category: 'Impermeabilização',
     description: 'Sistema de impermeabilização profissional para laje plana, garantindo estanqueidade total.',
