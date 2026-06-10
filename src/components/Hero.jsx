@@ -43,9 +43,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, type: 'spring', stiffness: 80, damping: 20 }}
           >
-            Especialistas em método construtivo,
-            impermeabilização e tratamento de patologias construtivas com base
-            em critérios técnicos e normas vigentes, também realizamos serviços de cobertura utilizando produtos Imperlast.
+            Especialistas em método construtivo, coberturas, impermeabilização e tratamento de patologias construtivas com base em critérios técnicos e normas vigentes.
           </motion.p>
 
           <motion.div
