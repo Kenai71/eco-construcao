@@ -45,7 +45,7 @@ export default function Hero() {
           >
             Especialistas em método construtivo,
             impermeabilização e tratamento de patologias construtivas com base
-            em critérios técnicos e normas vigentes. Realizamos serviços de cobertura utilizando produtos Imperlast.
+            em critérios técnicos e normas vigentes, também realizamos serviços de cobertura utilizando produtos Imperlast.
           </motion.p>
 
           <motion.div
