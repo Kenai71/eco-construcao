@@ -172,3 +172,17 @@
     opacity: 1;
   }
 }
+
+.projects__subtitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary, #1a1a1a);
+}
+
+.projects__lightbox-video {
+  max-height: 80vh;
+  object-fit: contain;
+  background-color: #000;
+}

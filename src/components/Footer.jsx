@@ -11,7 +11,7 @@ const navLinks = [
 
 const services = [
   'Método Construtivo',
-  'Cobertura Metálica',
+  'Cobertura Imperlast',
   'Impermeabilização',
   'Tratamento de Patologias',
 ]
@@ -42,7 +42,7 @@ export default function Footer() {
             </a>
             <p className="footer__brand-text">
               Construção civil com especialização em método construtivo,
-              cobertura metálica e impermeabilização.
+              cobertura Imperlast e impermeabilização.
             </p>
             <div className="footer__socials">
               <a

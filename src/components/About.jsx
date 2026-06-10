@@ -55,9 +55,13 @@ export default function About() {
           >
             <p>
               A <strong>Eco Construção</strong> atua no segmento da construção civil,
-              com especialização em método construtivo, cobertura metálica (sanduíche) e
+              com especialização em método construtivo, cobertura Imperlast e
               sistemas de impermeabilização e tratamento de patologias construtivas
               relacionadas à infiltração e umidade.
+            </p>
+            <p>
+              Somos representantes nacionais da <strong>Imperlast</strong>. Além de vendas
+              e construções, também realizamos treinamentos especializados para equipes.
             </p>
             <p>
               A empresa executa serviços com base em critérios técnicos, seguindo normas

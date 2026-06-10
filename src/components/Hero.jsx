@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="hero__bg-overlay" />
         <img
           src="/images/hero-construction.png"
-          alt="Construção civil com cobertura metálica"
+          alt="Construção civil com cobertura Imperlast"
           className="hero__bg-img"
         />
       </div>
@@ -43,7 +43,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, type: 'spring', stiffness: 80, damping: 20 }}
           >
-            Especialistas em método construtivo, cobertura metálica sanduíche,
+            Especialistas em método construtivo, cobertura Imperlast,
             impermeabilização e tratamento de patologias construtivas com base
             em critérios técnicos e normas vigentes.
           </motion.p>

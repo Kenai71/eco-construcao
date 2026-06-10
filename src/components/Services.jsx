@@ -14,11 +14,19 @@ const services = [
   },
   {
     icon: Warehouse,
-    title: 'Cobertura Metálica',
+    title: 'Cobertura Imperlast',
     description:
-      'Instalação e manutenção de coberturas metálicas com sistema sanduíche, proporcionando isolamento térmico e acústico superiores.',
-    features: ['Isolamento térmico', 'Acústica otimizada', 'Alta durabilidade'],
+      'Instalação e manutenção de coberturas Imperlast, proporcionando alta durabilidade e estanqueidade total.',
+    features: ['Alta durabilidade', 'Proteção contínua', 'Estanqueidade'],
     image: '/images/teto.png', 
+  },
+  {
+    icon: Warehouse,
+    title: 'Telha Sanduíche',
+    description:
+      'Instalação e manutenção de telhas com sistema sanduíche, garantindo isolamento térmico e acústico superiores.',
+    features: ['Isolamento térmico', 'Acústica otimizada', 'Alta durabilidade'],
+    image: '/images/telha-sanduiche.png', 
   },
   {
     icon: Drop,

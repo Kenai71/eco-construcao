@@ -1,12 +1,14 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { X } from '@phosphor-icons/react'
+import BeforeAfter from './BeforeAfter'
 import './Projects.css'
 
 const projects = [
   {
     id: 1,
     src: '/images/piscina.png',
+    type: 'image',
     title: 'Piscina de Alvenaria',
     category: 'Impermeabilização',
     description: 'Aplicação de Imperlast Acqua Duo em piscina de alvenaria — antes e depois do tratamento impermeabilizante.',
@@ -14,6 +16,7 @@ const projects = [
   {
     id: 2,
     src: '/images/piscina-de-azulejo.jpeg',
+    type: 'image',
     title: 'Piscina de Azulejo',
     category: 'Impermeabilização',
     description: 'Recuperação e impermeabilização de piscina de azulejo com sistema Imperlast Acqua Duo.',
@@ -21,16 +24,42 @@ const projects = [
   {
     id: 3,
     src: '/images/teto.png',
-    title: 'Cobertura Metálica Industrial',
-    category: 'Cobertura Metálica',
-    description: 'Instalação de cobertura metálica sanduíche em galpão industrial com isolamento termoacústico.',
+    type: 'image',
+    title: 'Cobertura Imperlast Industrial',
+    category: 'Cobertura Imperlast',
+    description: 'Instalação de cobertura Imperlast em galpão industrial com isolamento termoacústico.',
   },
   {
     id: 4,
     src: '/images/impermeabilizacao.png',
+    type: 'image',
     title: 'Impermeabilização de Laje',
     category: 'Impermeabilização',
     description: 'Sistema de impermeabilização profissional para laje plana, garantindo estanqueidade total.',
+  },
+  {
+    id: 5,
+    src: '/images/Acqua Duo.mp4',
+    type: 'video',
+    title: 'Aplicação Acqua Duo',
+    category: 'Impermeabilização',
+    description: 'Demonstração da aplicação do sistema Acqua Duo.',
+  },
+  {
+    id: 6,
+    src: '/images/borracha-liquida.mp4',
+    type: 'video',
+    title: 'Borracha Líquida',
+    category: 'Impermeabilização',
+    description: 'Aplicação de borracha líquida Imperlast.',
+  },
+  {
+    id: 7,
+    src: '/images/WhatsApp Video 2026-06-03 at 17.37.41.mp4',
+    type: 'video',
+    title: 'Impermelast Blindagem',
+    category: 'Impermeabilização',
+    description: 'Registro de obra com os sistemas Imperlast.',
   },
 ]
 
@@ -81,18 +110,47 @@ export default function Projects() {
               aria-label={`Ver projeto: ${project.title}`}
               onKeyDown={(e) => e.key === 'Enter' && setLightbox(project)}
             >
-              <img
-                src={project.src}
-                alt={project.title}
-                className="projects__item-img"
-                loading="lazy"
-              />
+              {project.type === 'video' ? (
+                <video
+                  src={project.src}
+                  className="projects__item-img"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <img
+                  src={project.src}
+                  alt={project.title}
+                  className="projects__item-img"
+                  loading="lazy"
+                />
+              )}
               <div className="projects__item-overlay">
                 <span className="projects__item-category">{project.category}</span>
                 <h3 className="projects__item-title">{project.title}</h3>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="projects__before-after-section">
+          <motion.h3 
+            className="projects__subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.4, type: 'spring' }}
+          >
+            Transformação na Prática
+          </motion.h3>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ delay: 0.5, type: 'spring' }}
+          >
+            <BeforeAfter beforeImage="/images/antes.png" afterImage="/images/depois.png" />
+          </motion.div>
         </div>
       </div>
 
@@ -119,11 +177,21 @@ export default function Projects() {
             >
               <X size={24} weight="bold" />
             </button>
-            <img
-              src={lightbox.src}
-              alt={lightbox.title}
-              className="projects__lightbox-img"
-            />
+            {lightbox.type === 'video' ? (
+              <video
+                src={lightbox.src}
+                className="projects__lightbox-img projects__lightbox-video"
+                autoPlay
+                controls
+                playsInline
+              />
+            ) : (
+              <img
+                src={lightbox.src}
+                alt={lightbox.title}
+                className="projects__lightbox-img"
+              />
+            )}
             <div className="projects__lightbox-info">
               <span className="projects__lightbox-category">{lightbox.category}</span>
               <h3 className="projects__lightbox-title">{lightbox.title}</h3>
