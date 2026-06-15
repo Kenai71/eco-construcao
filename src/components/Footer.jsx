@@ -120,7 +120,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="footer__link footer__link--static">
-                  Salvador — Bahia
+                  Lauro de Freitas — Bahia
                 </span>
               </li>
             </ul>
