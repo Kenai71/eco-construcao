@@ -44,6 +44,7 @@
   object-fit: contain;
   transform: scale(1.6);
   transform-origin: left center;
+  transition: transform var(--transition-base);
 }
 
 .header__nav {
@@ -177,5 +178,9 @@
   .header__logo-img {
     height: 42px;
     transform: scale(3.8);
+  }
+
+  .header--scrolled .header__logo-img {
+    transform: scale(1.8);
   }
 }
