@@ -14,7 +14,7 @@ const services = [
   },
   {
     icon: Warehouse,
-    title: 'Cobertura Sanduíche',
+    title: 'Telha Sanduíche',
     description:
       'Instalação e manutenção de coberturas Imperlast, proporcionando alta durabilidade e estanqueidade total.',
     features: ['Alta durabilidade', 'Proteção contínua', 'Estanqueidade'],
