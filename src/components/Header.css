@@ -176,11 +176,11 @@
 
 @media (max-width: 480px) {
   .header__logo-img {
-    height: 42px;
-    transform: scale(3.8);
+    height: 48px;
+    transform: scale(1.6);
   }
 
   .header--scrolled .header__logo-img {
-    transform: scale(1.8);
+    transform: scale(1.3);
   }
 }

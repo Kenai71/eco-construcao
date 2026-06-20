@@ -191,6 +191,7 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 100dvh;
+    align-items: flex-start;
   }
   
   .hero__bg-overlay {
@@ -203,7 +204,7 @@
   }
 
   .hero__content {
-    padding-top: calc(var(--header-height) + 140px);
+    padding-top: calc(var(--header-height) + 240px);
   }
 
   .hero__title {
