@@ -176,5 +176,6 @@
 @media (max-width: 480px) {
   .header__logo-img {
     height: 42px;
+    transform: scale(3.8);
   }
 }

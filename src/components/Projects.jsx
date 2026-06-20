@@ -22,14 +22,6 @@ const projects = [
     description: 'Recuperação e impermeabilização de piscina de azulejo com sistema Imperlast Acqua Duo.',
   },
   {
-    id: 3,
-    src: '/images/teto.png',
-    type: 'image',
-    title: 'Cobertura Imperlast Industrial',
-    category: 'Cobertura Imperlast',
-    description: 'Instalação de cobertura Imperlast em galpão industrial com isolamento termoacústico.',
-  },
-  {
     id: 4,
     src: '/images/impermeabilizacao.png',
     type: 'image',

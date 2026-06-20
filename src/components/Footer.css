@@ -143,4 +143,8 @@
   .footer__brand {
     padding-right: 0;
   }
+
+  .footer__logo {
+    transform: scale(3.8);
+  }
 }

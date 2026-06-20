@@ -5,20 +5,20 @@ import './Services.css'
 
 const services = [
   {
-    icon: HardHat,
-    title: 'Método Construtivo',
+    icon: Drop,
+    title: 'Impermeabilização',
     description:
-      'Execução de obras civis com metodologia técnica, garantindo eficiência e qualidade em todas as etapas do processo construtivo.',
-    features: ['Estrutura em concreto', 'Alvenaria estrutural', 'Acabamento fino'],
-    image: '/images/construcao.png',
+      'Sistemas completos de impermeabilização para lajes, piscinas, reservatórios e áreas molhadas, combatendo infiltrações.',
+    features: ['Lajes e coberturas', 'Piscinas e reservatórios', 'Áreas molhadas'],
+    image: '/images/impermeabilizacao.png',
   },
   {
-    icon: Warehouse,
-    title: 'Telha Sanduíche',
+    icon: HardHat,
+    title: 'Método Construtivo E-Bloco',
     description:
-      'Instalação e manutenção de coberturas Imperlast, proporcionando alta durabilidade e estanqueidade total.',
-    features: ['Alta durabilidade', 'Proteção contínua', 'Estanqueidade'],
-    image: '/images/teto.png', 
+      'Execução de obras civis com metodologia técnica, garantindo eficiência e qualidade em todas as etapas do processo construtivo.',
+    features: ['economia de até 45%', '⁠desperdício quase zero', 'velocidade de execução'],
+    image: '/images/construcao.png',
   },
   {
     icon: Warehouse,
@@ -26,15 +26,7 @@ const services = [
     description:
       'Instalação e manutenção de telhas com sistema sanduíche, garantindo isolamento térmico e acústico superiores.',
     features: ['Isolamento térmico', 'Acústica otimizada', 'Alta durabilidade'],
-    image: '/images/telha-sanduiche.png', 
-  },
-  {
-    icon: Drop,
-    title: 'Impermeabilização',
-    description:
-      'Sistemas completos de impermeabilização para lajes, piscinas, reservatórios e áreas molhadas, combatendo infiltrações.',
-    features: ['Lajes e coberturas', 'Piscinas e reservatórios', 'Áreas molhadas'],
-    image: '/images/impermeabilizacao.png',
+    image: '/images/telha-sanduiche.jpeg', 
   },
   {
     icon: Wall,
@@ -86,7 +78,7 @@ export default function Services() {
         <div className="services__grid">
           {services.map((service, i) => (
             <motion.div
-              key={service.title}
+              key={`${service.title}-${i}`}
               className={`services__card ${i % 2 !== 0 ? 'services__card--reversed' : ''}`}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -97,11 +89,6 @@ export default function Services() {
                 damping: 20,
               }}
             >
-              <div className="services__card-visual">
-                <img src={service.image} alt={service.title} className="services__card-img" />
-                <div className="services__card-img-overlay" />
-              </div>
-
               <div className="services__card-content">
                 <div className="services__card-icon">
                   <service.icon size={28} weight="duotone" />
@@ -116,8 +103,14 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
+
+                <div className="services__card-visual">
+                  <img src={service.image} alt={service.title} className="services__card-img" />
+                  <div className="services__card-img-overlay" />
+                </div>
+
                 <a
-                  href="https://wa.me/5571999431211?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20{service.title}."
+                  href={`https://wa.me/5571999431211?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20${encodeURIComponent(service.title)}.`}
                   className="services__card-link"
                   target="_blank"
                   rel="noopener noreferrer"
