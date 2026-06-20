@@ -250,7 +250,7 @@ export default function Contact() {
 
                 <button type="submit" className="btn btn-primary contact__submit" id="contact-submit-btn">
                   <PaperPlaneTilt size={18} weight="bold" />
-                  Enviar via WhatsApp
+                  Enviar via E-mail
                 </button>
               </form>
             )}
