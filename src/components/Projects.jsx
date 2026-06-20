@@ -53,14 +53,6 @@ const projects = [
     category: 'Impermeabilização',
     description: 'Aplicação de borracha líquida Imperlast.',
   },
-  {
-    id: 7,
-    src: '/images/WhatsApp Video 2026-06-03 at 17.37.41.mp4',
-    type: 'video',
-    title: 'Impermelast Blindagem',
-    category: 'Impermeabilização',
-    description: 'Registro de obra com os sistemas Imperlast.',
-  },
 ]
 
 export default function Projects() {
