@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Kenai71/eco-construcao#readme",
   "description": "",
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@phosphor-icons/react": "^2.1.10",
     "framer-motion": "^12.38.0",
     "react": "^19.2.6",

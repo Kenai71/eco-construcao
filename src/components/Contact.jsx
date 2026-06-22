@@ -10,6 +10,7 @@ import {
   CheckCircle,
   WarningCircle,
 } from '@phosphor-icons/react'
+import emailjs from '@emailjs/browser'
 import './Contact.css'
 
 export default function Contact() {
@@ -23,11 +24,13 @@ export default function Contact() {
   const validate = () => {
     const errs = {}
     if (!form.name.trim()) errs.name = 'Nome é obrigatório'
-    if (!form.phone.trim()) errs.phone = 'Telefone é obrigatório'
-    if (!form.message.trim()) errs.message = 'Mensagem é obrigatória'
-    if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    if (!form.email.trim()) {
+      errs.email = 'Email é obrigatório'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       errs.email = 'Email inválido'
     }
+    if (!form.phone.trim()) errs.phone = 'Telefone é obrigatório'
+    if (!form.message.trim()) errs.message = 'Mensagem é obrigatória'
     return errs
   }
 
@@ -40,15 +43,32 @@ export default function Contact() {
     }
     setErrors({})
 
-    const msg = encodeURIComponent(
-      `Olá! Meu nome é ${form.name}.\n` +
-      `${form.email ? `Email: ${form.email}\n` : ''}` +
-      `Telefone: ${form.phone}\n\n` +
-      `${form.message}`
-    )
-    window.open(`https://wa.me/5571999431211?text=${msg}`, '_blank')
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
+    const templateParams = {
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      message: form.message,
+    }
+
+    emailjs
+      .send(
+        'service_5lnso7z',
+        'template_5828sow',
+        templateParams,
+        'tsNM7-kYpUmjaAFTp'
+      )
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text)
+          setSubmitted(true)
+          setForm({ name: '', email: '', phone: '', message: '' })
+          setTimeout(() => setSubmitted(false), 5000)
+        },
+        (error) => {
+          console.log('FAILED...', error)
+          alert('Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.')
+        }
+      )
   }
 
   const handleChange = (field) => (e) => {
@@ -153,7 +173,7 @@ export default function Contact() {
               <div className="contact__success">
                 <CheckCircle size={48} weight="duotone" />
                 <h3>Mensagem Enviada!</h3>
-                <p>Você será redirecionado para o WhatsApp. Aguardamos seu contato.</p>
+                <p>Agradecemos seu contato. Retornaremos em breve por e-mail ou telefone!</p>
               </div>
             ) : (
               <form className="contact__form" onSubmit={handleSubmit} noValidate>
@@ -184,7 +204,7 @@ export default function Contact() {
                 <div className="contact__field-row">
                   <div className="contact__field">
                     <label htmlFor="contact-email-field" className="contact__label">
-                      Email
+                      Email *
                     </label>
                     <div className={`contact__input-wrapper ${errors.email ? 'contact__input-wrapper--error' : ''}`}>
                       <EnvelopeSimple size={18} weight="regular" className="contact__input-icon" />
