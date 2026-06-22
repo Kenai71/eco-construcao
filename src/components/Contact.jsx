@@ -137,7 +137,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="contact__channel-label">Localização</span>
-                  <span className="contact__channel-value">Salvador — Bahia</span>
+                  <span className="contact__channel-value">Lauro de Freitas — Bahia</span>
                 </div>
               </div>
             </motion.div>
