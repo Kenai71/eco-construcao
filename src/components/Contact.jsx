@@ -71,8 +71,23 @@ export default function Contact() {
       )
   }
 
+  const formatPhone = (value) => {
+    if (!value) return value
+    const phoneNumber = value.replace(/\D/g, '')
+    const phoneNumberLength = phoneNumber.length
+    if (phoneNumberLength < 3) return phoneNumber
+    if (phoneNumberLength < 7) {
+      return `(${phoneNumber.slice(0, 2)}) ${phoneNumber.slice(2)}`
+    }
+    return `(${phoneNumber.slice(0, 2)}) ${phoneNumber.slice(2, 7)}-${phoneNumber.slice(7, 11)}`
+  }
+
   const handleChange = (field) => (e) => {
-    setForm((prev) => ({ ...prev, [field]: e.target.value }))
+    let value = e.target.value
+    if (field === 'phone') {
+      value = formatPhone(value)
+    }
+    setForm((prev) => ({ ...prev, [field]: value }))
     if (errors[field]) {
       setErrors((prev) => {
         const next = { ...prev }
@@ -237,6 +252,7 @@ export default function Contact() {
                         placeholder="(71) 99999-9999"
                         value={form.phone}
                         onChange={handleChange('phone')}
+                        maxLength={15}
                       />
                     </div>
                     {errors.phone && (
